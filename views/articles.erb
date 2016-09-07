@@ -1,0 +1,13 @@
+<h1>News Aggregator</h1>
+  <h3><a href="/articles/new">Submit new article</a></h3>
+<% require 'csv' %>
+<ul>
+  <% @file.each do |article| %>
+    <% article_details = CSV.parse(article) %>
+    <li>
+      <p>Title: <%= article_details[0][0] %></p>
+      <p>URL: <a target="_blank" href="<%= article_details[1] %>"> <%= article_details[0][1] %></a></p>
+      <p>Description: <%= article_details[0][2] %></p>
+    </li>
+  <% end %>
+</ul>

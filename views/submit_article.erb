@@ -1,0 +1,23 @@
+<% if @error %>
+<h2>Error! <%= @error %> </h2>
+<% end %>
+<h3>Input new article:</h3>
+<div id="input">
+<form action="/articles/new" method="post">
+  <div>
+    <label for="article">New Article Title:</label>
+    <input type="text" id="article" name="title" value=<%=@title%>>
+  </div>
+
+  <div>
+    <label for="article">New Article URL:</label>
+    <input type="url" id="url" name="url" value=<%=@url%>>
+  </div>
+
+  <div>
+    <label for="article">Description:</label>
+    <input type="text" id="description" name="description" value=<%=@description%>>
+  </div>
+  <input type="submit" value="Submit">
+</form>
+</div>
